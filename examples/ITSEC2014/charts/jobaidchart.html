@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="bootstrap-3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="xAPI-Dashboard/lib/nv.d3.css">
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="bootstrap-3.3.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="xAPI-Dashboard/lib/d3.v3.js" charset="utf-8"></script>
+	<script type="text/javascript" src="xAPI-Dashboard/lib/nv.d3.js"></script>
+	<script type="text/javascript" src="xAPI-Dashboard/lib/xapiwrapper.min.js"></script>
+	<script type="text/javascript" src="xAPI-Dashboard/src/chart.js"></script>
+	<script type="text/javascript" src="xAPI-Dashboard/src/dashboard.js"></script>
+	<script type="text/javascript" src="xAPI-Dashboard/src/xapicollection.js"></script>
+<!--
+    <script type="text/javascript" src="xAPI-Dashboard/dist/xapidashboard.min.js"></script>
+    <script type="text/javascript" src="xAPI-Dashboard/dist/xapicollection.min.js"></script>
+-->
+    <script type="text/javascript" src="jobaiddata.js"></script>
+    <style type="text/css">
+        body
+        {
+            width: 1300px;
+            padding-left: 20px;
+        }
+        
+        svg
+        {
+            width: 600px;
+            height: 400px;
+        }
+        
+        .shadow
+        {
+            border: 1px solid #DDD;
+            border-spacing: 3px;
+            -webkit-box-shadow: 5px 5px 20px #AAA;
+	           -moz-box-shadow: 5px 5px 20px #AAA;
+	                box-shadow: 5px 5px 20px #AAA;
+            
+        }
+        
+        .bar,
+        .circle
+        {
+            padding-top: 20px;
+            padding-right: 20px;
+            margin-left: 15px;
+            margin-bottom: 15px;
+            width: 650px;
+            height: 450px;
+        }
+        
+        .bar svg
+        {
+            padding-top: 15px;
+        }
+        
+        .bar div.nvtooltip { margin-top: 30px; }
+        
+        .graphcontainer
+        {
+            display: flex;
+        }
+        
+/*        #actorbar div.nvtooltip { margin-left:600px };*/
+    </style>
+</head>
+<body>
+    <h1>Android Job Aid Metrics 
+    <div class="btn-group pull-right" data-toggle="buttons">
+      <label class="btn btn-primary active">
+        <input type="radio" name="options" id="canned" autocomplete="off" checked> Pre Canned Data
+      </label>
+      <label class="btn btn-primary">
+        <input type="radio" name="options" id="live" autocomplete="off"> LRS Data
+      </label>
+    </div>
+    </h1>
+    <h4>Total # of times subject was accessed</h4>
+    <div class="graphcontainer">
+        <div class="shadow bar">
+            <svg id="activities"></svg>
+        </div>
+        <div class="shadow bar">    
+            <svg id="actorbar"></svg>
+        </div>
+    </div>
+    <h4>Total # of times student used job aid</h4>
+    <div class="graphcontainer">
+        <div class="shadow bar">
+            <svg id="actors"></svg>
+        </div>
+        <div class="shadow circle">    
+            <svg id="activitypie"></svg>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var wrapper = ADL.XAPIWrapper;
+        wrapper.changeConfig({endpoint:"https://lrs.adlnet.gov/xapi/"});
+        var dash = new ADL.XAPIDashboard();
+        
+        window.onload = function () {
+            $('input:radio[id="canned"]').on('change', function () {
+                console.log("canned");
+                drawCharts(false);
+            })
+            $('input:radio[id="live"]').on('change', function () {
+                console.log("live");
+                drawCharts(true);
+            })
+            
+            drawCharts(false);
+        };
+        
+        function drawCharts(live) {
+            d3.select('svg').empty();
+            dash.data.contents = [];
+            if (live) {
+                // only get statements with "id": "http://adlnet.gov/jobaid/roses"
+                // and ADL.verbs.experienced
+                dash.fetchAllStatements({'activity':'http://adlnet.gov/jobaid/roses','verb':ADL.verbs.experienced.id,'related_activities':'true'},
+                                       function() {graphActivityActivity(); graphActorActivityFrequency();});
+            }
+            else {
+                dash.addStatements(window.JAData);
+                graphActivityActivity();
+                graphActorActivityFrequency();
+            }
+            
+        }
+        
+        function graphActivityActivity() {
+            var activityActivitiesBar = dash.createBarChart({
+                container: '#activities',
+                groupBy: 'object.id',
+                aggregate: ADL.count(),
+                customize: function (chart) {
+                    chart.xAxis.rotateLabels(45);
+                    chart.xAxis.tickFormat(function(d){return /[^\/]+$/.exec(d)[0];});
+                },
+                child: actorBar 
+            });
+            activityActivitiesBar.clear();
+            activityActivitiesBar.draw();
+        }
+        
+        function graphActorActivityFrequency() {
+            var actorActivityBar = dash.createBarChart({
+                container: '#actors',
+                groupBy: 'actor.mbox',
+                aggregate: ADL.count(),
+                customize: function (chart, event) {
+                    chart.xAxis.rotateLabels(45);
+                    chart.xAxis.tickFormat(function(d){
+                        var coll = new ADL.Collection(dash.data.contents.slice(0));
+                        var contents = coll.where('actor.mbox = "'+ d +'"').contents;
+                        return contents[0].actor.name;
+                    });
+                },
+                child: activityPie
+            });
+            actorActivityBar.clear();
+            actorActivityBar.draw();
+        }
+        
+        var activityPie = dash.createPieChart({
+                container: "#activitypie",
+                groupBy: "object.id",
+                pre: function (data, event) {
+                    return data.where('actor.mbox = "' + event.in + '"');
+                },
+                aggregate: ADL.count(),
+                customize: function(c) { 
+                    c.showLabels(false);
+                }
+            });
+        activityPie.addOptions({smoothTransition:true});
+        
+        var actorBar = dash.createBarChart({
+                container: "#actorbar",
+                groupBy: "actor.mbox",
+                pre: function (data, event) {
+                    return data.where('object.id = "' + event.in + '"');
+                },
+                aggregate: ADL.count(),
+                customize: function(c) { 
+                    c.xAxis.rotateLabels(45);
+                    c.xAxis.tickFormat(function(d){
+                        var coll = new ADL.Collection(dash.data.contents.slice(0));
+                        var contents = coll.where('actor.mbox = "'+ d +'"').contents;
+                        return contents[0].actor.name;
+                    });
+                }
+            });
+    </script>
+</body>
+</html>

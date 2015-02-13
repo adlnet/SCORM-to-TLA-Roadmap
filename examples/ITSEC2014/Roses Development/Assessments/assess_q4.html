@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!-- *************************************************************************
+**
+**    xAPI Extensions 
+**
+**************************************************************************-->
+<script type="text/javascript">
+  var activity = "http://adlnet.gov/courses/roses/q4"; //document.location.protocol + "//" + document.location.host + document.location.pathname;
+</script>
+<script type="text/javascript" src="../Shared/JavaScript/xapiwrapper.min.js"></script>
+<script type="text/javascript" src="../Shared/JavaScript/SCORM2004ToXAPIFunctions.js"></script>
+<!-- *************************************************************************
+**
+**    End xAPI Extensions 
+**
+*************************************************************************-->
+<script language="JavaScript" src="../Shared/JavaScript/APIWrapper.js"></script>
+<script language="JavaScript" src="../Shared/JavaScript/SCOFunctions.js"></script>
+<script language="JavaScript">
+
+var scoIsComplete = false;
+
+function submitScore() 
+{
+  document.examForm.submitButton.disabled = true;
+
+  scoIsComplete = true;
+
+	var fb = document.getElementById("feedback");
+	fb.innerHTML = "The correct answer is 'Dark Pink: gratitude'";
+
+  // setup the basic interaction information
+  storeDataValue("cmi.interactions.0.id", "urn:adl_roses_q4");
+  storeDataValue("cmi.interactions.0.type", "choice");
+  storeDataValue("cmi.interactions.0.description", "Which color is correctly matched with its rose color symbolism?");
+
+  // find the learners response
+  var response = "";
+  for(var i=0, length=document.examForm.Q4.length; i < length; i++) 
+  {
+      if (document.examForm.Q4[i].checked) 
+      {
+        response = document.examForm.Q4[i].value;
+        break;
+      }
+  }
+
+  storeDataValue("cmi.interactions.0.learner_response", response);
+
+  if(document.examForm.Q4[0].checked)
+  {
+    storeDataValue('cmi.success_status', 'passed');
+    storeDataValue('cmi.score.scaled', '1.0');
+    storeDataValue("cmi.interactions.0.result", "correct");
+  }
+  else
+  {
+    storeDataValue('cmi.success_status', 'failed');
+    storeDataValue('cmi.score.scaled', '0');
+    storeDataValue("cmi.interactions.0.result", "incorrect");
+  }	
+}  
+
+function unloadSco()
+{
+  if(scoIsComplete)
+  {
+    storeDataValue("cmi.completion_status", "completed"); 
+  }
+  else
+  {
+    storeDataValue("cmi.exit", "suspend");
+  }
+  
+  terminateCommunication(); 
+}
+
+</script>
+<link rel="stylesheet" href="../Shared/Styles/foundation.min.css"> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Question 4</title>
+
+</head>
+<body onload="javascript:initializeCommunication(); storeDataValue('cmi.completion_status', 'incomplete');" onunload="javascript:unloadSco();" >
+<div id="targetDiv">
+<form name="examForm" action="">
+<p>4.<strong>Which color is correctly matched with its rose color symbolism?</strong></p>
+<ul>
+  <li>
+    <input type="radio" value="a" name="Q4" />
+      Dark Pink: gratitude</li>
+  <li>
+    <input type="radio" value="b" name="Q4" />
+    Pink: health </li>
+  <li>
+    <input type="radio" value="c" name="Q4" />
+    Blue: indifference &nbsp;</li>
+  <li>
+    <input type="radio" value="d" name="Q4" />
+    Coral or Orange: jealousy </li>
+</ul>
+<input type="button" name="submitButton" value="Submit" onClick="submitScore();"/>
+</form>
+<div id="feedback"></div>
+
+
+</body>
+</html>

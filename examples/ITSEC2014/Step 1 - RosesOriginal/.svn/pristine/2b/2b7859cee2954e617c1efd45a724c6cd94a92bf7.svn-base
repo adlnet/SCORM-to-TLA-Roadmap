@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!-- *************************************************************************
+**
+**    xAPI Extensions 
+**
+**************************************************************************-->
+<script type="text/javascript">
+  var activity = document.location.protocol + "//" + document.location.host + document.location.pathname;
+</script>
+<script type="text/javascript" src="../Shared/JavaScript/xapiwrapper.min.js"></script>
+<!-- *************************************************************************
+**
+**    End xAPI Extensions 
+**
+*************************************************************************-->
+<script language="JavaScript" src="../Shared/JavaScript/APIWrapper.js"></script>
+<script language="JavaScript" src="../Shared/JavaScript/SCOFunctions.js"></script>
+<script> 
+function showAbout() {
+		window.open('../Shared/about.html','about','toolbar=no,menubar=no,scrollbars=yes,width=600,height=200')	
+			
+	}
+	function showRes() {
+			window.open('../Shared/resources.html','resources','toolbar=no,menubar=no,scrollbars=yes,width=600,height=200')
+		
+	}
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Lesson1 Definitions</title>
+</head>>
+	
+    <style type="text/css">
+<!--
+.style1 {	color: #800000;
+	font-style: italic;
+}
+-->
+    </style>
+</head>
+
+<body onload="javascript:initializeCommunication(); storeDataValue('cmi.completion_status', 'incomplete');" onunload="javascript:storeDataValue('cmi.completion_status', 'completed'); terminateCommunication(); " >
+<div id="targetDiv">
+<ins>Module 2 lesson 1
+<span class="style1">(tied to objective obj_module_2</span><em>)</em></ins><em></em>
+<h2>What's a Rose?</h2>
+<p>A rose is a flowering shrub of the genus Rosa, and the flower of this shrub. There are more than a hundred species of wild roses, all from the northern hemisphere and mostly from temperate regions. The species form a group of generally prickly shrubs or climbers, and sometimes trailing plants, reaching 2-5 m tall, rarely reaching as high as 20 m by climbing over other plants.</p>
+
+<p>The name originates from Latin rosa, borrowed through Oscan from colonial Greek in southern Italy: rhodon (Aeolic form: wrodon), from Aramaic wurrda, from Assyrian wurtinnu, from Old Iranian *warda (cf. Armenian vard, Avestan warda, Sogdian ward, Parthian wâr).
+</p>
+
+<div><p><a href="javascript:showAbout()">About this training</a></p>
+<p><a href="javascript:showRes()">Resources</a></p></div>
+
+</body>
+</html>

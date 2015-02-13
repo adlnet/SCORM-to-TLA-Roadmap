@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!-- *************************************************************************
+**
+**    xAPI Extensions 
+**
+**************************************************************************-->
+<script type="text/javascript">
+  var activity = "http://adlnet.gov/courses/roses/hybrids"; // "http://www.adlnet.gov/courses/roses/hybrids"; //document.location.protocol + "//" + document.location.host + document.location.pathname;
+</script>
+<script type="text/javascript" src="../Shared/JavaScript/xapiwrapper.min.js"></script>
+<script type="text/javascript" src="../Shared/JavaScript/SCORM2004ToXAPIFunctions.js"></script>
+<!-- *************************************************************************
+**
+**    End xAPI Extensions 
+**
+*************************************************************************-->
+<script language="JavaScript" src="../Shared/JavaScript/APIWrapper.js"></script>
+<script language="JavaScript" src="../Shared/JavaScript/SCOFunctions.js"></script>
+<script> 
+function showAbout() {
+		window.open('../Shared/about.html','about','toolbar=no,menubar=no,scrollbars=yes,width=600,height=200')	
+			
+	}
+	function showRes() {
+			window.open('../Shared/resources.html','resources','toolbar=no,menubar=no,scrollbars=yes,width=600,height=200')
+		
+	}
+</script>
+<link rel="stylesheet" href="../Shared/Styles/foundation.min.css"> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Lesson 5 Rose Hybrids</title>
+
+	
+    <style type="text/css">
+<!--
+.style1 {color: #800000;
+	font-style: italic;
+}
+-->
+    </style>
+</head>
+
+<body onload="javascript:initializeCommunication(); storeDataValue('cmi.completion_status', 'incomplete');" onunload="javascript:storeDataValue('cmi.completion_status', 'completed'); terminateCommunication(); " >
+<div id="targetDiv">
+<p><ins>Module 4 lesson 5 <span class="style1">(tied to objective obj_module_4)</span></ins></p>
+<strong>Hybrid Tea</strong> is a Cultivar Group of roses, created by cross-breeding two different types of roses. Grown one flower to a long stem, they are supported by long, straight and upright stems. Most can be as tall as 1.8 metres and are repeat flowering. Each flower can grow to 8-12.5 cm wide. Hybrid Teas are the world's most popular type of rose by choice due to their color and flower form. With their long stems, it gives them the advantage, over others, as cut flowers. Most varieties, however, lack fragrance and can be difficult to grow in the home garden due to a lack of disease resistance and susceptibility to cold temperatures.
+ 
+<div><p><a href="javascript:showAbout()">About this training</a></p>
+<p><a href="javascript:showRes()">Resources</a></p></div> 
+  
+</body>
+</html>

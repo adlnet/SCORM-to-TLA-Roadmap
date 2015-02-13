@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<!-- *************************************************************************
+**
+**    xAPI Extensions 
+**
+**************************************************************************-->
+<script type="text/javascript">
+  var activity = "http://adlnet.gov/courses/roses/introduction"; // document.location.protocol + "//" + document.location.host + document.location.pathname;
+</script>
+<script type="text/javascript" src="../Shared/JavaScript/xapiwrapper.min.js"></script>
+<script type="text/javascript" src="../Shared/JavaScript/SCORM2004ToXAPIFunctions.js"></script>
+<!-- *************************************************************************
+**
+**    End xAPI Extensions 
+**
+*************************************************************************-->
+
+<script language="JavaScript" src="../Shared/JavaScript/APIWrapper.js"></script>
+<script language="JavaScript" src="../Shared/JavaScript/SCOFunctions.js"></script>
+<script language="javascript">
+ 
+
+	function showAbout() {
+		window.open('../Shared/about.html','about','toolbar=no,menubar=no,scrollbars=yes,width=600,height=200')	
+			
+	}
+	function showRes() {
+			window.open('../Shared/resources.html','resources','toolbar=no,menubar=no,scrollbars=yes,width=600,height=200')
+		
+	}
+		 	
+	function getLearnersName(divID){
+	
+		var obj = document.getElementById(divID);
+		var learnersName = retrieveDataValue('cmi.learner_name');
+		obj.innerHTML = "Welcome to Roses 101, "+learnersName;
+	}
+</script>
+<link rel="stylesheet" href="../Shared/Styles/foundation.min.css"> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Introduction</title>
+</head>
+<body onload="javascript:initializeCommunication(); getLearnersName('targetDiv'); storeDataValue('cmi.completion_status', 'incomplete');" onunload="javascript:storeDataValue('cmi.completion_status', 'completed'); terminateCommunication(); " >
+<div id="targetDiv">
+  <p>The fetched data will go here.</p>
+</div>
+
+<div>
+<p>
+In this course you will learn the basics about roses. You'll find it useful whether you are a hobbyist, wholesaler, or want to be a master gardener.  
+</p>
+</div>
+
+<div><p><a href="javascript:showAbout()">About this training</a></p>
+<p><a href="javascript:showRes()">Resources</a></p></div>
+
+</body>
+</html>

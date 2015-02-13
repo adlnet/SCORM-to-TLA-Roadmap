@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="about.xslt"?>
+<info xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="C:\Documents and Settings\clarkc\My Documents\SCORM_Workshop_Source\Developers_Workshop2\Shared Assests\about.xsd">
+	<about>About This Training
+This training was developed by Concurrent Technologies Corporation  (www.ctc.com).
+
+We would like to acknowledge the following for their significant contributions to the content of this training (alphabetical)
+
+<li>www.w3schools.com</li>
+
+
+Feedback
+
+For more information about this training please contact Andy Johnson at johnsona@ctc.com.
+
+CTC provides this material for training only. We do not warrant the correctness of its contents. The risk from using it lies entirely with the user.
+</about>
+</info>

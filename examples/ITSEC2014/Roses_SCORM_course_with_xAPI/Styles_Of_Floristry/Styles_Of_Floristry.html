@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!-- *************************************************************************
+**
+**    xAPI Extensions 
+**
+**************************************************************************-->
+<script type="text/javascript">
+  var activity = "http://adlnet.gov/courses/roses/styles"; //document.location.protocol + "//" + document.location.host + document.location.pathname;
+</script>
+<script type="text/javascript" src="../Shared/JavaScript/xapiwrapper.min.js"></script>
+<script type="text/javascript" src="../Shared/JavaScript/SCORM2004ToXAPIFunctions.js"></script>
+<!-- *************************************************************************
+**
+**    End xAPI Extensions 
+**
+*************************************************************************-->
+<script language="JavaScript" src="../Shared/JavaScript/APIWrapper.js"></script>
+<script language="JavaScript" src="../Shared/JavaScript/SCOFunctions.js"></script>
+<script> 
+function showAbout() {
+		window.open('../Shared/about.html','about','toolbar=no,menubar=no,scrollbars=yes,width=600,height=200')	
+			
+	}
+	function showRes() {
+			window.open('../Shared/resources.html','resources','toolbar=no,menubar=no,scrollbars=yes,width=600,height=200')
+		
+	}
+</script>
+<link rel="stylesheet" href="../Shared/Styles/foundation.min.css"> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Lesson 6 Styles of Floristry</title>
+
+    <style type="text/css">
+<!--
+.style1 {color: #800000;
+	font-style: italic;
+}
+-->
+    </style>
+</head>
+
+<body onload="javascript:initializeCommunication(); storeDataValue('cmi.completion_status', 'incomplete');" onunload="javascript:storeDataValue('cmi.completion_status', 'completed'); terminateCommunication(); " >
+<ins>Module 5 lesson 6 <span class="style1">(tied to objective obj_module_5</span><em>)</em></ins><em></em>
+<p>Many nations have their own style of floral arranging.</p>
+<p>
+  <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="550" height="400">
+    <param name="movie" value="Floristry.swf" />
+    <param name="quality" value="high" />
+    <embed src="Floristry.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="550" height="400"></embed>
+  </object>
+</p>
+
+<div><p><a href="javascript:showAbout()">About this training</a></p>
+<p><a href="javascript:showRes()">Resources</a></p></div>
+
+</body>
+</html>

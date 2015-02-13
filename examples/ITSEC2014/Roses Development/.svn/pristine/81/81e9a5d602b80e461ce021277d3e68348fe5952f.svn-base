@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="about.xslt"?>
-<info xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="C:\Documents and Settings\clarkc\My Documents\SCORM_Workshop_Source\Developers_Workshop2\Shared Assests\about.xsd">
-<about>
-This example was created by the Advanced Distributed Learning (ADL) Initiative to illustrate the partly-automated conversion from SCORM 2004 4th Edition to Experience API.
-
-For more information see xapi.adlnet.gov.
-</about>
-</info>

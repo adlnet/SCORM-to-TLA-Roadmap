@@ -1,5 +1,6 @@
 .jumbo {
-    background: #85BFDB;
+/*    background: #85BFDB;*/
+    background: url("../img/roadmap-min.png");
     padding-top: 8em;
     padding-bottom: 6.5em;
     margin-bottom: 7em;

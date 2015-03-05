@@ -2,7 +2,7 @@
     background: #85BFDB;
     padding-top: 8em;
     padding-bottom: 6.5em;
-    margin-bottom: 7em;
+    margin-bottom: 5.5em;
     color: #F9F9F9;
     text-align: center;
     text-shadow: 0 1px 3px rgba(48, 69, 79, .6);
@@ -32,6 +32,10 @@
     text-align: center;
     text-shadow: 0 1px 3px rgba(48, 69, 79, .6);
 }
+.container {
+    padding-left: 0;
+    padding-right: 0;
+}
 .img-shadow {
     -moz-box-shadow: 0 0 7px #30454F;
     -webkit-box-shadow: 0 0 7px #30454F;
@@ -44,15 +48,26 @@
     box-shadow: 0px 0px 7px #fff;
     filter: progid: DXImageTransform.Microsoft.Glow(Color=#fff, Strength=7);
 }
+.headline {
+    margin-bottom: 2em;
+}
 .headline-card {
     -moz-box-shadow: 0 0 7px #30454F;
     -webkit-box-shadow: 0 0 7px #30454F;
     box-shadow: 0px 0px 7px #30454F;
     filter: progid: DXImageTransform.Microsoft.Glow(Color=#30454F, Strength=7);
     height: 35em;
-    padding-top: 3em;
+}
+.headline-card-body {
     padding-left: 1em;
     padding-right: 1em;
+}
+.headline-card-heading {
+    background: #85BFDB;
+    color: #F9F9F9;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    text-align: center;
 }
 .headline-card img {
     display: block;

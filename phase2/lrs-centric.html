@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SCORM Phase - SCORM to TLA Roadmap</title>
+    <title>LRS Centric Phase - SCORM to TLA Roadmap</title>
 
     <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -36,11 +36,11 @@
                     </div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="#" title="Phase 0 - SCORM">SCORM</a>
+                            <li><a href="../phase0/scorm.html" title="Phase 0 - SCORM">SCORM</a>
                             </li>
                             <li><a href="../phase1/lms-centric.html" title="Phase 1 - LMS Centric">LMS Centric</a>
                             </li>
-                            <li><a href="../phase2/lrs-centric.html" title="Phase 2 - LRS Centric">LRS Centric</a>
+                            <li class="active"><a href="#" title="Phase 2 - LRS Centric">LRS Centric</a>
                             </li>
                             <li><a href="../phase3/tla.html" title="Phase 3 - TLA">TLA</a>
                             </li>
@@ -64,8 +64,8 @@
 
     <div class="jumbotron jumbo">
         <div class="container">
-            <h1>SCORM</h1>
-            <img class="img-circle img-glow" width="80px" src="../img/scorm-icon.png" alt="developer page logo">
+            <h1>LRS Centric</h1>
+            <img class="img-circle img-glow" width="80px" src="../img/lrs-c-icon.png" alt="developer page logo">
         </div>
     </div>
 
@@ -73,19 +73,27 @@
         <div class="row">
             <div class="col-xs-12">
                 <h2>Description</h2>
-                <p>This phase represents the starting point for the roadmap. In this phase SCORM tools, products and training material is used 
-                to create an interoperable learning environment. The Learning Management System (LMS) stands in the center of this environment, 
-                potentially managing learners, the training material and the learner records.</p>
+                <p>This phase begins to reduce an organizaton's reliance on an LMS, but still contains an LMS due to 
+                   existing investments and interfaces with other systems. The xAPI SCORM-profile and any additional 
+                   xAPI data is tracked by native xAPI content.  Launch of this content is managed by a system other 
+                   than the LMS. xAPI data which relates directly to LMS data may be synced between the LRS and LMS 
+                   so existing system interfaces or reports continue to work.
+                </p>
                 
                 <h4>For you if..</h4>
                 <div>
                     <ul>
-                        <li>Your LMS is the immutable center of your organization's learning architecture.</li>
-                        <li>You rely on authoring tools or content developers that create SCORM content.</li>
-                        <li>You need to protect investments in existing SCORM-conformant content.</li>
-                        <li>Your learning / training is primarily, or solely, web-based and singler learner scenarios.</li>
-                        <li>You have little, or no budget, for updates to the learning systems or courses.</li>
-                        <li>You have a requirement from a stakeholder to use SCORM.</li>
+                        <li>Your organization relies on an LMS but mainly for existing integrations with other systems, 
+                            or to keep historical data until it can be transitioned.</li>
+                        <li>Your authoring tools or content developers create SCORM content, but also invest in content 
+                            managed outside of the LMS.</li>
+                        <li>Your organization is beginning to use mobile apps, simulations, games or other non-web-based 
+                            content.</li>
+                        <li>Your organiazation is investing in modern learning technologies and has an LRS available.</li>
+                        <li>Data reporting or analytics using LMS-provided reports is not sufficient for organizational 
+                            needs.</li>
+                        <li>Your organization desires to track additional information about a learner's interaction with 
+                            a SCORM course that is not possible with SCORM.</li>
                     </ul>
                 </div>
             </div>
@@ -95,11 +103,12 @@
                 <h2>Benefits</h2>
                 <div>
                     <ul>
-                        <li>Many organizations already have a SCORM-conformant LMS so investment would be minimal.</li>
-                        <li>SCORM is widely adopted so there are many tools available that use SCORM formats.</li>
-                        <li>Many ISDs and content developers are aware of SCORM and know how to design / develop for SCORM.</li>
-                        <li>Requires little to no change to the current practices.</li>
-                        <li>SCORM is a mature specification that is stable, with few changes.</li>
+                        <li>Supports content that is not managed by a tradtional LMS: mobile, sinulations, games, etc.</li>
+                        <li>Tracks data about individual learners, groups of learners, teams, instructors, mentors, 
+                            peers, etc.</li>
+                        <li>Exposes learning data in the LRS through a standardized interface for reports and analytics.</li>
+                        <li>Allows tracking of additional (non-SCORM) data as defined by the organization.</li>
+                        <li>Organizations can begin to integrate services more easily.</li>
                     </ul>
                 </div>
             </div>
@@ -107,21 +116,28 @@
         <div class="row">
             <div class="col-xs-12">
                 <h2>Transition</h2>
-                <p>It is expected that you are already here in some capacicty. If you do not have an existing SCORM environent and do not need to support SCORM, we suggest you begin at the <a href="https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md">Experience API</a> and other <a href="http://www.adlnet.gov/tla/">concepts of the TLA</a>.</p>
+                <div>
+                    <ul>
+                        <li>Configure your LMS to pull data from your LRS.</li>
+                        <li>Report data primarily to the LRS instead of the LMS.</li>
+                        <li>Configure content to launch externally from the LMS.</li>
+                        <li>Define content and user access / authentication.</li>
+                    </ul>
+                </div>
             </div>
         </div>
-<!--
         <div class="row">
             <div class="col-xs-12">
                 <h2>Resources</h2>
                 <div>
                     <ul>
-                        <li></li>
+                        <li><a href="https://github.com/adlnet/xAPI-SCORM-Profile/blob/master/xapi-scorm-profile.md">xAPI SCORM Profile</a></li>
+                        <li><a href="https://github.com/adlnet/SCORM-to-xAPI-Wrapper">SCORM to xAPI Wrapper</a></li>
+                        <li><a href="https://github.com/adlnet/xAPI-Spec/blob/master/xAPI.md">xAPI Specification</a></li>
                     </ul>
                 </div>
             </div>
         </div>
--->
 
         <hr class="featurette-divider">
         <div class="row">

@@ -6,8 +6,8 @@
     <string name="app_activity_iri">http://adlnet.gov/jobaid/roses</string>
 
     <string name="lrs_endpoint">https://lrs.adlnet.gov/xapi/</string>
-    <string name="lrs_user">lou</string>
-    <string name="lrs_password">password</string>
+    <string name="lrs_user">xAPIRosesIITSEC2014</string>
+    <string name="lrs_password">iitsec2014</string>
 
     <string name="preferences_screen_title">Create xAPI Actor Account</string>
     <string name="preferences_key">org.adl.roses.preferences</string>

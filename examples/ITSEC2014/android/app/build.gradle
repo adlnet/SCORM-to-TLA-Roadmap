@@ -8,12 +8,12 @@ android {
         applicationId "org.adl.roses"
         minSdkVersion 8
         targetSdkVersion 21
-        versionCode 3
-        versionName "1.2"
+        versionCode 4
+        versionName "1.3"
     }
     buildTypes {
         release {
-            runProguard false
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }

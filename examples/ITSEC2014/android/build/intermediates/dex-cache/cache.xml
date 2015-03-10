@@ -1,35 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<pre-dex-items>
+<items version="2" >
 
     <item
-        dex="D:\ADL\svn\docs\Systems\IITSEC 2014\SCORM to xAPI Roadmap Sessions\android\app\build\intermediates\pre-dexed\debug\classes-dc79c7d604d5098d2eaa60b9bf3d1f3856950b7b.jar"
-        jar="D:\ADL\svn\docs\Systems\IITSEC 2014\SCORM to xAPI Roadmap Sessions\android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.0\classes.jar"
+        jar="D:\ADL\git\Roadmap Repo\SCORM-to-TLA-Roadmap\examples\ITSEC2014\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\libs\internal_impl-21.0.0.jar"
         jumboMode="false"
         revision="21.1.0"
-        sha1="95fd37732ec852e99f07eeb516a3650172f1d136"/>
+        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0">
+        <dex dex="D:\ADL\git\Roadmap Repo\SCORM-to-TLA-Roadmap\examples\ITSEC2014\android\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.0-570cdbe38556952c6d00fab19da956045036f3de.jar" />
+    </item>
     <item
-        dex="D:\ADL\svn\docs\Systems\IITSEC 2014\SCORM to xAPI Roadmap Sessions\android\app\build\intermediates\pre-dexed\debug\xapi-e6023def540f80dd9c4d6b5ac3ae9d097d0ad746.jar"
-        jar="D:\ADL\svn\docs\Systems\IITSEC 2014\SCORM to xAPI Roadmap Sessions\android\app\libs\xapi.jar"
+        jar="D:\ADL\git\Roadmap Repo\SCORM-to-TLA-Roadmap\examples\ITSEC2014\android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.0\classes.jar"
         jumboMode="false"
         revision="21.1.0"
-        sha1="0f593dc28780c6b024becc610c8f9f14b90c9561"/>
+        sha1="95fd37732ec852e99f07eeb516a3650172f1d136">
+        <dex dex="D:\ADL\git\Roadmap Repo\SCORM-to-TLA-Roadmap\examples\ITSEC2014\android\app\build\intermediates\pre-dexed\debug\classes-60e64722db240d4b985de69b066d7f5cfb2c82f4.jar" />
+    </item>
     <item
-        dex="D:\ADL\svn\docs\Systems\IITSEC 2014\SCORM to xAPI Roadmap Sessions\android\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.0-424656e540e80ac20c9d5b11c9b7aad8e7c748f0.jar"
-        jar="D:\ADL\svn\docs\Systems\IITSEC 2014\SCORM to xAPI Roadmap Sessions\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\libs\internal_impl-21.0.0.jar"
+        jar="D:\ADL\git\Roadmap Repo\SCORM-to-TLA-Roadmap\examples\ITSEC2014\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\classes.jar"
         jumboMode="false"
         revision="21.1.0"
-        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0"/>
+        sha1="686344a780033e4ba22b926cd225f8d4941247e6">
+        <dex dex="D:\ADL\git\Roadmap Repo\SCORM-to-TLA-Roadmap\examples\ITSEC2014\android\app\build\intermediates\pre-dexed\debug\classes-430c0f5c9a85e50eb574c9e1c3c6a80554187ea1.jar" />
+    </item>
     <item
-        dex="D:\ADL\svn\docs\Systems\IITSEC 2014\SCORM to xAPI Roadmap Sessions\android\app\build\intermediates\pre-dexed\debug\classes-f714d3191fc1cc0d994b09178675b407592f70e6.jar"
-        jar="D:\ADL\svn\docs\Systems\IITSEC 2014\SCORM to xAPI Roadmap Sessions\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.0\classes.jar"
+        jar="D:\ADL\git\Roadmap Repo\SCORM-to-TLA-Roadmap\examples\ITSEC2014\android\app\libs\xapi.jar"
         jumboMode="false"
         revision="21.1.0"
-        sha1="686344a780033e4ba22b926cd225f8d4941247e6"/>
+        sha1="0f593dc28780c6b024becc610c8f9f14b90c9561">
+        <dex dex="D:\ADL\git\Roadmap Repo\SCORM-to-TLA-Roadmap\examples\ITSEC2014\android\app\build\intermediates\pre-dexed\debug\xapi-caa4e7d0be1801f340c6ad645e9af3155e1b9570.jar" />
+    </item>
     <item
-        dex="D:\ADL\svn\docs\Systems\IITSEC 2014\SCORM to xAPI Roadmap Sessions\android\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.0-f90f321111100430706673cd21a6cfa57209ce6f.jar"
-        jar="C:\android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.0\support-annotations-21.0.0.jar"
+        jar="C:\android-sdk\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.0\support-annotations-21.0.0.jar"
         jumboMode="false"
         revision="21.1.0"
-        sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e"/>
+        sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e">
+        <dex dex="D:\ADL\git\Roadmap Repo\SCORM-to-TLA-Roadmap\examples\ITSEC2014\android\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.0-2ffaa6db9a77af08a190805e8b4b0556757353c9.jar" />
+    </item>
 
-</pre-dex-items>
+</items>

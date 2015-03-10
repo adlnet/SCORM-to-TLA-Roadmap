@@ -16,8 +16,8 @@ xapi = function(){
    var config = {
       lrs:{
          endpoint:"https://lrs.adlnet.gov/xapi/",
-         user:"jono",
-         password:"12345"
+         user:"xAPIRosesIITSEC2014",
+         password:"iitsec2014"
       },
       courseId:"http://adlnet.gov/courses/roses",
       lmsHomePage:"http://cloud.scorm.com"

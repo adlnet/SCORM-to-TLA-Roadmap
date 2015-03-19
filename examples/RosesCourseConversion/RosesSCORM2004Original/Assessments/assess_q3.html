@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script language="JavaScript" src="../Shared/JavaScript/APIWrapper.js"></script>
+<script language="JavaScript" src="../Shared/JavaScript/SCOFunctions.js"></script>
+<script language="JavaScript">
+
+function submitScore() 
+{
+  document.examForm.submitButton.disabled = true;
+
+	var fb = document.getElementById("feedback");
+	fb.innerHTML = "The correct answer is 'Most varieties lack fragrance'";
+
+  if(document.examForm.Q3[2].checked)
+  {
+    storeDataValue('cmi.success_status', 'passed');
+    storeDataValue('cmi.score.scaled', '1.0');
+  }
+  else
+  {
+    storeDataValue('cmi.success_status', 'failed');
+    storeDataValue('cmi.score.scaled', '0');
+  }
+}  
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Question 3</title>
+
+</head>
+<body onload="javascript:initializeCommunication(); storeDataValue('cmi.completion_status', 'incomplete');" onunload="javascript:storeDataValue('cmi.completion_status', 'completed'); terminateCommunication(); " >
+<div id="targetDiv">
+<form name="examForm" action="">
+<p>3. <strong>Which is true about hybrid tea roses?</strong>:</p>
+<ul>
+  <li>
+    <input type="radio" value="a" name="Q3" />
+    Most are good for growing in cold climates </li>
+  <li>
+    <input type="radio" value="b" name="Q3" />
+    Most have strong resistance to disease </li>
+  <li>
+    <input type="radio" value="c" name="Q3" />
+    Most varieties lack fragrance  </li>
+  <li>
+    <input type="radio" value="d" name="Q3" />
+    Most grow as single blooms on short stems </li>
+</ul>
+<input type="button" name="submitButton" value="Submit" onClick="submitScore();"/>
+</form>
+<div id="feedback"></div>
+
+</body>
+</html>

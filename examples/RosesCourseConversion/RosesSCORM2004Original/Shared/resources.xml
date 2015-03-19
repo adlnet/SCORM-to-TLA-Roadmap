@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<resource desc="World Wide Web Consortium (W3C)" url="http://www.w3.org"/>
+	<resource desc="The W3C XML Schema Main Page" url="http://www.w3.org/XML/Schema"/>
+	<resource desc="XML Schema Part 0: Primer" url="http://www.w3.org/TR/xmlschema-0"/>
+	<resource desc="XML Schema Part 1: Structures" url="http://www.w3.org/TR/xmlschema-1"/>
+	<resource desc="XML Schema Part 2: Datatypes" url="http://www.w3.org/TR/xmlschema-2"/>
+	<resource desc="Extensible Markup Language (XML) 1.0 (Second Edition)" url="http://www.w3.org/TR/2000/REC-xml-20001006"/>
+</resources>

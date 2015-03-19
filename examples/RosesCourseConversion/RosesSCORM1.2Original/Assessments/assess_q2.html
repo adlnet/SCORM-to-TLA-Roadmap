@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script language="JavaScript" src="../Shared/JavaScript/APIWrapper.js"></script>
+<script language="JavaScript">
+
+var scoIsComplete = false;
+
+function submitScore() 
+{
+  document.examForm.submitButton.disabled = true;
+
+  scoIsComplete = true;
+   
+  var fb = document.getElementById("feedback");
+  fb.innerHTML = "The correct answer is 'All of the Statements are true'";
+
+  // setup the basic interaction information
+  doLMSSetValue("cmi.interactions.0.id", "urn:adl_roses_q2");
+  doLMSSetValue("cmi.interactions.0.type", "choice");
+
+  // find the learners response
+  var response = "";
+  for(var i=0, length=document.examForm.Q2.length; i < length; i++) 
+  {
+      if (document.examForm.Q2[i].checked) 
+      {
+        response = document.examForm.Q2[i].value;
+        break;
+      }
+  }
+
+  doLMSSetValue("cmi.interactions.0.student_response", response);
+
+   if(document.examForm.Q2[2].checked)
+  {
+    doLMSSetValue('cmi.core.lesson_status', 'passed');
+    doLMSSetValue('cmi.core.score.raw', '100');
+    doLMSSetValue('cmi.core.score.min', '0');
+    doLMSSetValue('cmi.core.score.max', '100');
+    doLMSSetValue("cmi.interactions.0.result", "correct");
+  }
+  else
+  {
+    doLMSSetValue('cmi.core.lesson_status', 'failed');
+    doLMSSetValue('cmi.core.score.raw', '0');
+    doLMSSetValue('cmi.core.score.min', '0');
+    doLMSSetValue('cmi.core.score.max', '100');    
+    doLMSSetValue("cmi.interactions.0.result", "wrong");
+  } 
+}  
+
+function unloadSco()
+{
+  if(!scoIsComplete)
+  {
+    doLMSSetValue('cmi.core.lesson_status', 'incomplete');
+    doLMSSetValue("cmi.core.exit", "suspend");
+  }
+  
+  doLMSFinish(); 
+}
+
+</script>
+<link rel="stylesheet" href="../Shared/Styles/foundation.min.css"> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Question 2</title>
+
+
+</head>
+<body onload="javascript:doLMSInitialize();" onunload="javascript:unloadSco();" >
+<div id="targetDiv">
+
+<form name="examForm" action="">
+<p>2.<strong>Which statement is true about the purpose of pruning?</strong></p>
+<ul>
+  <li>
+    <input type="radio" value="a" name="Q2" />
+    Pruning shapes the plant by controlling or directing plant growth</li>
+  <li>
+    <input type="radio" value="b" name="Q2" />
+    Pruning maintains the health of the plant </li>
+  <li>
+    <input type="radio" value="c" name="Q2" />
+    All the statements are true</li>
+  <li>
+    <input type="radio" value="d" name="Q2" />
+    Pruning increases the yield or quality of flowers and fruits</li>
+</ul>
+<input type="button" name="submitButton" value="Submit" onClick="submitScore();" />
+</form>
+<div id="feedback"></div>
+
+</body>
+</html>

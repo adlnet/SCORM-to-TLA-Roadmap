@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!-- *************************************************************************
+**
+**    xAPI Extensions 
+**
+**************************************************************************-->
+<script type="text/javascript">
+  var activity = "http://adlnet.gov/courses/roses/posttest"; // document.location.protocol + "//" + document.location.host + document.location.pathname;
+</script>
+<script type="text/javascript" src="../Shared/JavaScript/xapiwrapper.min.js"></script>
+<script type="text/javascript" src="../Shared/JavaScript/SCORMToXAPIFunctions.js"></script>
+<!-- *************************************************************************
+**
+**    End xAPI Extensions 
+**
+*************************************************************************-->
+<script language="JavaScript" src="../Shared/JavaScript/APIWrapper.js"></script>
+<script language="JavaScript" src="../Shared/JavaScript/SCOFunctions.js"></script>
+<script language="JavaScript">
+
+var scoIsComplete = false;
+
+function submitScore() 
+{
+  scoIsComplete = true;
+
+  // setup the basic interaction information
+  storeDataValue("cmi.interactions.0.id", "urn:adl_roses_q1");
+  storeDataValue("cmi.interactions.0.type", "choice");
+  storeDataValue("cmi.interactions.0.description", "What is the correct genus for roses?");
+  storeDataValue("cmi.interactions.1.id", "urn:adl_roses_q2");
+  storeDataValue("cmi.interactions.1.type", "choice");
+  storeDataValue("cmi.interactions.1.description", "Which statement is true about the purpose of pruning?");
+  storeDataValue("cmi.interactions.2.id", "urn:adl_roses_q3");
+  storeDataValue("cmi.interactions.2.type", "choice");
+  storeDataValue("cmi.interactions.2.description", "Which is true about hybrid tea roses?");
+  storeDataValue("cmi.interactions.3.id", "urn:adl_roses_q4");
+  storeDataValue("cmi.interactions.3.type", "choice");
+  storeDataValue("cmi.interactions.3.description", "Which color is correctly matched with its rose color symbolism?");
+
+  // get the learners responses
+  var response = "";
+
+  // q1
+  for(var i=0, length=document.examForm.Q1.length; i < length; i++) 
+  {
+      if (document.examForm.Q1[i].checked) 
+      {
+        response = document.examForm.Q1[i].value;
+        break;
+      }
+  }
+  storeDataValue("cmi.interactions.0.learner_response", response);
+  response = "";
+
+  // q2
+  for(var i=0, length=document.examForm.Q2.length; i < length; i++) 
+  {
+      if (document.examForm.Q2[i].checked) 
+      {
+        response = document.examForm.Q2[i].value;
+        break;
+      }
+  }
+  storeDataValue("cmi.interactions.1.learner_response", response);
+  response = "";
+
+  // q3
+  for(var i=0, length=document.examForm.Q3.length; i < length; i++) 
+  {
+      if (document.examForm.Q3[i].checked) 
+      {
+        response = document.examForm.Q3[i].value;
+        break;
+      }
+  }
+  storeDataValue("cmi.interactions.2.learner_response", response);
+  response = "";
+
+  // q4
+  for(var i=0, length=document.examForm.Q4.length; i < length; i++) 
+  {
+      if (document.examForm.Q4[i].checked) 
+      {
+        response = document.examForm.Q4[i].value;
+        break;
+      }
+  }
+  storeDataValue("cmi.interactions.3.learner_response", response);
+
+	document.examForm.submitButton.disabled = true;
+	var score = 0;
+	
+  // determine score and set 'result'
+  if(document.examForm.Q1[0].checked)
+  {
+    score = score + 25; 
+    storeDataValue("cmi.interactions.0.result", "correct");
+  }  
+  else
+  {
+    storeDataValue("cmi.interactions.0.result", "incorrect");
+  }
+
+  if(document.examForm.Q2[2].checked)
+  {
+    score = score + 25; 
+    storeDataValue("cmi.interactions.1.result", "correct");
+  }  
+  else
+  {
+    storeDataValue("cmi.interactions.1.result", "incorrect");
+  }
+
+  if(document.examForm.Q3[2].checked)
+  {
+    score = score + 25; 
+    storeDataValue("cmi.interactions.2.result", "correct");
+  }
+  else
+  {
+    storeDataValue("cmi.interactions.2.result", "incorrect");
+  } 
+
+  if(document.examForm.Q4[0].checked)
+  {
+    score = score + 25; 
+    storeDataValue("cmi.interactions.3.result", "correct");
+  }
+  else
+  {
+    storeDataValue("cmi.interactions.3.result", "incorrect");
+  } 
+
+	var res = document.getElementById("results");
+
+	score = score / 100;
+	storeDataValue('cmi.score.scaled', score);
+	
+  if (score > 0.70){
+		storeDataValue('cmi.success_status', 'passed');	
+	}
+	else 
+  {
+		storeDataValue('cmi.success_status', 'failed');
+	}
+	
+  var message = "Your score is: " + (score * 100);
+
+  res.innerHTML = message;
+
+}  
+
+function unloadSco()
+{
+  if(scoIsComplete)
+  {
+    storeDataValue("cmi.completion_status", "completed"); 
+  }
+  else
+  {
+    storeDataValue("cmi.exit", "suspend");
+  }
+  
+  terminateCommunication(); 
+}
+
+</script>
+<link rel="stylesheet" href="../Shared/Styles/foundation.min.css"> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Post Test</title>
+
+</head>
+<body onload="javascript:initializeCommunication(); storeDataValue('cmi.completion_status', 'incomplete');" onunload="javascript:unloadSco();" >
+<div id="targetDiv">
+
+<form name="examForm" action="">  
+<p>1. <strong>What is the correct genus for roses?</strong></p>
+<ul>
+  <li>
+    <input type="radio" value="a" name="Q1" /> Rosa 
+    </li>
+  <li>
+    <input type="radio" value="b" name="Q1" />
+    Rosus</li>
+  <li>
+    <input type="radio" value="c" name="Q1" />
+    Russo</li>
+  <li>
+    <input type="radio" value="d" name="Q1" />
+    Rusto</li>
+</ul>
+<p>2.<strong>Which statement is true about the purpose of pruning?</strong></p>
+<ul>
+  <li>
+    <input type="radio" value="a" name="Q2" />
+    Pruning shapes the plant by controlling or directing plant growth</li>
+  <li>
+    <input type="radio" value="b" name="Q2" />
+    Pruning maintains the health of the plant </li>
+  <li>
+    <input type="radio" value="c" name="Q2" />
+    All the statements are true</li>
+  <li>
+    <input type="radio" value="d" name="Q2" />
+    Pruning increases the yield or quality of flowers and fruits</li>
+</ul>
+<p>3. <strong>Which is true about hybrid tea roses?</strong>:</p>
+<ul>
+  <li>
+    <input type="radio" value="a" name="Q3" />
+    Most are good for growing in cold climates </li>
+  <li>
+    <input type="radio" value="b" name="Q3" />
+    Most have strong resistance to disease </li>
+  <li>
+    <input type="radio" value="c" name="Q3" />
+    Most varieties lack fragrance  </li>
+  <li>
+    <input type="radio" value="d" name="Q3" />
+    Most grow as single blooms on short stems </li>
+</ul>
+<p>4.<strong>Which color is correctly matched with its rose color symbolism?</strong></p>
+<ul>
+  <li>
+    <input type="radio" value="a" name="Q4" />
+      Dark Pink: gratitude</li>
+  <li>
+    <input type="radio" value="b" name="Q4" />
+    Pink: health </li>
+  <li>
+    <input type="radio" value="c" name="Q4" />
+    Blue: indifference &nbsp;</li>
+  <li>
+    <input type="radio" value="d" name="Q4" />
+    Coral or Orange: jealousy </li>
+</ul>
+<input type="button" name="submitButton" value="Submit" onClick="submitScore();"/>
+</form>
+<div id="results"></div>
+
+
+</body>
+</html>

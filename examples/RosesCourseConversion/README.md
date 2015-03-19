@@ -15,22 +15,22 @@ to address it.
 ## The Roses Courses
 The following courses are included as examples
 
-### Roses SCORM 1.2 Original
+#### Roses SCORM 1.2 Original
 The project contains the SCORM Version 1.2 Roses Course.  
 
 This course version tracks a subset of SCORM data model elements using the SCORM Version 1.2 Run-Time Environment.
 
-### Roses SCORM 2004 Original
+#### Roses SCORM 2004 Original
 The project contains the SCORM 2004 Roses Course.  
 
 This course version tracks a subset of SCORM data model elements using the SCORM 2004 Run-Time Environment.
 
-### Roses SCORM 1.2 Converted
+#### Roses SCORM 1.2 Converted
 The project contains the SCORM Version 1.2 Roses Course with the [SCORM to xAPI Wrapper files](https://github.com/adlnet/SCORM-to-xAPI-Wrapper) integrated.  
 
 This course version tracks a subset of SCORM data model elements using the SCORM Version 1.2 Run-Time Environment and equivalent xAPI statements.
 
-### Roses SCORM 2004 Converted
+#### Roses SCORM 2004 Converted
 The project contains the SCORM 2004 Roses Course with the [SCORM to xAPI Wrapper files](https://github.com/adlnet/SCORM-to-xAPI-Wrapper) integrated.  
 
 This course version tracks a subset of SCORM data model elements using the SCORM 2004 Run-Time Environment and equivalent xAPI statements.

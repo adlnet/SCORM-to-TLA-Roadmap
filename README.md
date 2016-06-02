@@ -1,6 +1,8 @@
 # SCORM-to-TLA-Roadmap
 Guidance on transitioning from a SCORM environment to a TLA environment.
 
+See more information about [the roadmap](http://adlnet.github.io/SCORM-to-TLA-Roadmap/).
+
 #SCORM - Phase 0
 
 Typical SCORM learning environment. An LMS is the central hub of the learning environment, delivering content and recording learner progress.
@@ -24,5 +26,3 @@ This phase begins to reduce an organization's reliance on an LMS, but still cont
 A services based approach to training and learning environments. APIs for learning services are defined and used to create a a completely customizable training and learning environment.
 
 This phase is currently a catch-all for any future compontents of the Training and Learning Architecture. As the learning environment becomes more services focused, other aspects traditionally provided by an LMS will be defined as stand-alone components with standard interfaces. This approach will allow organizations to choose which components are right for them without the concerns of compatibility with existing services.
-
-See more information about [the roadmap](http://adlnet.github.io/SCORM-to-TLA-Roadmap/).

@@ -8,11 +8,36 @@
   </metadata>
   <organizations default="ORG-35C6AD226A6FC7DB47BE726A01167EBF">
     <organization identifier="ORG-35C6AD226A6FC7DB47BE726A01167EBF" structure="hierarchical">
-      <title>Roses 101 - SCORM 2004 - Converted Version</title>
+      <title>WORKING VERSION - Roses 101 SCORM 2004 - Converted Version</title>
       <item identifier="ITEM-5E9AC1DCB6A0F867E6197B8CDB8948C5" isvisible="true">
         <title>Module1</title>
         <item identifier="ITEM-55AAA6A3545DE7BE0DA3815BE1A68D4F" isvisible="true" identifierref="RES-9EDAE324221F5841BB39FEF6DFDE2BA4">
           <title>Introduction to Roses</title>
+            <adlcp:dataFromLMS>
+            {
+                  "lrs":{
+                     "endpoint":"https://lrs.adlnet.gov/xapi/",
+                     "user":"xapi-workshop",
+                     "password":"password1234"
+                  },
+                  "courseId":"http://adlnet.gov/courses/roses",
+                  "lmsHomePage":"http://lms.adlnet.gov",
+                  "isScorm2004":true,
+                  "activityId":"http://adlnet.gov/courses/roses/introduction",
+                  "groupingContextActivity":{
+                     "definition": {
+                        "name": {
+                            "en-US": "TECOM Workshop"
+                        },
+                        "description": {
+                            "en-US": "TECOM Workshop happening Nov 2016"
+                        }
+                    },
+                    "id": "http://adlnet.gov/event/xapiworkshop/tecom",
+                    "objectType": "Activity"
+                 }
+               }    
+            </adlcp:dataFromLMS>
         </item>
         <imsss:sequencing>
           <imsss:controlMode choice="true" choiceExit="true" flow="true" forwardOnly="false" useCurrentAttemptObjectiveInfo="true" useCurrentAttemptProgressInfo="true" />
@@ -23,6 +48,31 @@
         <title>Pretest</title>
         <item identifier="ITEM-F42903ECE4667B88004E500FB0E8814F" isvisible="true" identifierref="RES-0846D65AA38327A33B27BD10324712D9">
           <title>Q1</title>
+            <adlcp:dataFromLMS>
+                {
+                  "lrs":{
+                     "endpoint":"https://lrs.adlnet.gov/xapi/",
+                     "user":"xapi-workshop",
+                     "password":"password1234"
+                  },
+                  "courseId":"http://adlnet.gov/courses/roses",
+                  "lmsHomePage":"http://lms.adlnet.gov",
+                  "isScorm2004":true,
+                  "activityId":"http://adlnet.gov/courses/roses/q1",
+                  "groupingContextActivity":{
+                     "definition": {
+                        "name": {
+                            "en-US": "TECOM Workshop"
+                        },
+                        "description": {
+                            "en-US": "TECOM Workshop happening Nov 2016"
+                        }
+                    },
+                    "id": "http://adlnet.gov/event/xapiworkshop/tecom",
+                    "objectType": "Activity"
+                 }
+               }    
+            </adlcp:dataFromLMS>
           <imsss:sequencing>
             <imsss:rollupRules objectiveMeasureWeight="0.0000" />
             <imsss:objectives>
@@ -34,6 +84,31 @@
         </item>
         <item identifier="ITEM-6D9F60E12E04F56E8E5CF81A5FE7C251" isvisible="true" identifierref="RES-672D64B6AC98F89E0AB6BDA2CA7A60E5">
           <title>Q2</title>
+            <adlcp:dataFromLMS>
+                {
+                  "lrs":{
+                     "endpoint":"https://lrs.adlnet.gov/xapi/",
+                     "user":"xapi-workshop",
+                     "password":"password1234"
+                  },
+                  "courseId":"http://adlnet.gov/courses/roses",
+                  "lmsHomePage":"http://lms.adlnet.gov",
+                  "isScorm2004":true,
+                  "activityId":"http://adlnet.gov/courses/roses/q2",
+                  "groupingContextActivity":{
+                     "definition": {
+                        "name": {
+                            "en-US": "TECOM Workshop"
+                        },
+                        "description": {
+                            "en-US": "TECOM Workshop happening Nov 2016"
+                        }
+                    },
+                    "id": "http://adlnet.gov/event/xapiworkshop/tecom",
+                    "objectType": "Activity"
+                 }
+               }    
+            </adlcp:dataFromLMS>
           <imsss:sequencing>
             <imsss:rollupRules objectiveMeasureWeight="0.0000" />
             <imsss:objectives>
@@ -45,6 +120,31 @@
         </item>
         <item identifier="ITEM-66729CAA632E87A5D96583ACE97B0D77" isvisible="true" identifierref="RES-CDE0CF00FFA18541A35818187D9FC513">
           <title>Q3</title>
+            <adlcp:dataFromLMS>
+                {
+                  "lrs":{
+                     "endpoint":"https://lrs.adlnet.gov/xapi/",
+                     "user":"xapi-workshop",
+                     "password":"password1234"
+                  },
+                  "courseId":"http://adlnet.gov/courses/roses",
+                  "lmsHomePage":"http://lms.adlnet.gov",
+                  "isScorm2004":true,
+                  "activityId":"http://adlnet.gov/courses/roses/q3",
+                  "groupingContextActivity":{
+                     "definition": {
+                        "name": {
+                            "en-US": "TECOM Workshop"
+                        },
+                        "description": {
+                            "en-US": "TECOM Workshop happening Nov 2016"
+                        }
+                    },
+                    "id": "http://adlnet.gov/event/xapiworkshop/tecom",
+                    "objectType": "Activity"
+                 }
+               }    
+            </adlcp:dataFromLMS>
           <imsss:sequencing>
             <imsss:rollupRules objectiveMeasureWeight="0.0000" />
             <imsss:objectives>
@@ -56,6 +156,31 @@
         </item>
         <item identifier="ITEM-D19EEBD1FE4EABAB2B0E35239860494A" isvisible="true" identifierref="RES-00468743A7FC4329257619AC9541C732">
           <title>Q4</title>
+            <adlcp:dataFromLMS>
+                {
+                  "lrs":{
+                     "endpoint":"https://lrs.adlnet.gov/xapi/",
+                     "user":"xapi-workshop",
+                     "password":"password1234"
+                  },
+                  "courseId":"http://adlnet.gov/courses/roses",
+                  "lmsHomePage":"http://lms.adlnet.gov",
+                  "isScorm2004":true,
+                  "activityId":"http://adlnet.gov/courses/roses/q4",
+                  "groupingContextActivity":{
+                     "definition": {
+                        "name": {
+                            "en-US": "TECOM Workshop"
+                        },
+                        "description": {
+                            "en-US": "TECOM Workshop happening Nov 2016"
+                        }
+                    },
+                    "id": "http://adlnet.gov/event/xapiworkshop/tecom",
+                    "objectType": "Activity"
+                 }
+               }    
+            </adlcp:dataFromLMS>
           <imsss:sequencing>
             <imsss:rollupRules objectiveMeasureWeight="0.0000" />
             <imsss:objectives>
@@ -88,6 +213,31 @@
         <title>Module2</title>
         <item identifier="ITEM-7DC331A0232C10CEB3247B077645AA7D" isvisible="true" identifierref="RES-31E04683377558E96E1EA976B6D5993E">
           <title>What_Is_A_Rose</title>
+            <adlcp:dataFromLMS>
+                {
+                  "lrs":{
+                     "endpoint":"https://lrs.adlnet.gov/xapi/",
+                     "user":"xapi-workshop",
+                     "password":"password1234"
+                  },
+                  "courseId":"http://adlnet.gov/courses/roses",
+                  "lmsHomePage":"http://lms.adlnet.gov",
+                  "isScorm2004":true,
+                  "activityId":"http://adlnet.gov/courses/roses/what",
+                  "groupingContextActivity":{
+                     "definition": {
+                        "name": {
+                            "en-US": "TECOM Workshop"
+                        },
+                        "description": {
+                            "en-US": "TECOM Workshop happening Nov 2016"
+                        }
+                    },
+                    "id": "http://adlnet.gov/event/xapiworkshop/tecom",
+                    "objectType": "Activity"
+                 }
+               }    
+            </adlcp:dataFromLMS>
         </item>
         <imsss:sequencing>
           <imsss:controlMode choice="true" choiceExit="true" flow="true" forwardOnly="false" useCurrentAttemptObjectiveInfo="true" useCurrentAttemptProgressInfo="true" />
@@ -111,12 +261,87 @@
         <title>Module3</title>
         <item identifier="ITEM-AD2FB3AFC3BD1F3479A20EE69C7E13AD" isvisible="true" identifierref="RES-9D5031D5E3BC2FBF371D6BDD26B06C35">
           <title>Pruning</title>
+            <adlcp:dataFromLMS>
+              {
+                  "lrs":{
+                     "endpoint":"https://lrs.adlnet.gov/xapi/",
+                     "user":"xapi-workshop",
+                     "password":"password1234"
+                  },
+                  "courseId":"http://adlnet.gov/courses/roses",
+                  "lmsHomePage":"http://lms.adlnet.gov",
+                  "isScorm2004":true,
+                  "activityId":"http://adlnet.gov/courses/roses/pruning",
+                  "groupingContextActivity":{
+                     "definition": {
+                        "name": {
+                            "en-US": "TECOM Workshop"
+                        },
+                        "description": {
+                            "en-US": "TECOM Workshop happening Nov 2016"
+                        }
+                    },
+                    "id": "http://adlnet.gov/event/xapiworkshop/tecom",
+                    "objectType": "Activity"
+                 }
+               }    
+            </adlcp:dataFromLMS>
         </item>
         <item identifier="ITEM-5F980AF6F6C28A076962578BEB434365" isvisible="true" identifierref="RES-7D5CD34E21C2955D4F05D9DBEAD5F487">
           <title>DeadHeading</title>
+            <adlcp:dataFromLMS>
+                {
+                      "lrs":{
+                         "endpoint":"https://lrs.adlnet.gov/xapi/",
+                         "user":"xapi-workshop",
+                         "password":"password1234"
+                      },
+                      "courseId":"http://adlnet.gov/courses/roses",
+                      "lmsHomePage":"http://lms.adlnet.gov",
+                      "isScorm2004":true,
+                      "activityId":"http://adlnet.gov/courses/roses/headheading",
+                      "groupingContextActivity":{
+                         "definition": {
+                            "name": {
+                                "en-US": "TECOM Workshop"
+                            },
+                            "description": {
+                                "en-US": "TECOM Workshop happening Nov 2016"
+                            }
+                        },
+                        "id": "http://adlnet.gov/event/xapiworkshop/tecom",
+                        "objectType": "Activity"
+                     }
+                   }    
+            </adlcp:dataFromLMS>
         </item>
         <item identifier="ITEM-278B62995DDE020D622C8DCF74D8E614" isvisible="true" identifierref="RES-A842E4CE1FCBF754B4B1D18A6226AD00">
           <title>Shearing</title>
+            <adlcp:dataFromLMS>
+                {
+                      "lrs":{
+                         "endpoint":"https://lrs.adlnet.gov/xapi/",
+                         "user":"xapi-workshop",
+                         "password":"password1234"
+                      },
+                      "courseId":"http://adlnet.gov/courses/roses",
+                      "lmsHomePage":"http://lms.adlnet.gov",
+                      "isScorm2004":true,
+                      "activityId":"http://adlnet.gov/courses/roses/shearing",
+                      "groupingContextActivity":{
+                         "definition": {
+                            "name": {
+                                "en-US": "TECOM Workshop"
+                            },
+                            "description": {
+                                "en-US": "TECOM Workshop happening Nov 2016"
+                            }
+                        },
+                        "id": "http://adlnet.gov/event/xapiworkshop/tecom",
+                        "objectType": "Activity"
+                     }
+                   }    
+            </adlcp:dataFromLMS>
         </item>
         <imsss:sequencing>
           <imsss:controlMode choice="true" choiceExit="true" flow="true" forwardOnly="false" useCurrentAttemptObjectiveInfo="true" useCurrentAttemptProgressInfo="true" />
@@ -140,6 +365,31 @@
         <title>Module4</title>
         <item identifier="ITEM-69F9C6752BCDCC9E35F81322B42C907E" isvisible="true" identifierref="RES-136A5D74CD7C8B942C921996AE343626">
           <title>Rose Hybrids</title>
+            <adlcp:dataFromLMS>
+                {
+                  "lrs":{
+                     "endpoint":"https://lrs.adlnet.gov/xapi/",
+                     "user":"xapi-workshop",
+                     "password":"password1234"
+                  },
+                  "courseId":"http://adlnet.gov/courses/roses",
+                  "lmsHomePage":"http://lms.adlnet.gov",
+                  "isScorm2004":true,
+                  "activityId":"http://adlnet.gov/courses/roses/hybrids",
+                  "groupingContextActivity":{
+                     "definition": {
+                        "name": {
+                            "en-US": "TECOM Workshop"
+                        },
+                        "description": {
+                            "en-US": "TECOM Workshop happening Nov 2016"
+                        }
+                    },
+                    "id": "http://adlnet.gov/event/xapiworkshop/tecom",
+                    "objectType": "Activity"
+                 }
+               }    
+            </adlcp:dataFromLMS>
         </item>
         <imsss:sequencing>
           <imsss:controlMode choice="true" choiceExit="true" flow="true" forwardOnly="false" useCurrentAttemptObjectiveInfo="true" useCurrentAttemptProgressInfo="true" />
@@ -163,9 +413,59 @@
         <title>Module5</title>
         <item identifier="ITEM-54F3E27DDDFB7138B3EA64A7CFC8558F" isvisible="true" identifierref="RES-89EFD946750E943D00A4C1B1BC1F6CF2">
           <title>Styles Of Floristry</title>
+          <adlcp:dataFromLMS>
+            {
+              "lrs":{
+                 "endpoint":"https://lrs.adlnet.gov/xapi/",
+                 "user":"xapi-workshop",
+                 "password":"password1234"
+              },
+              "courseId":"http://adlnet.gov/courses/roses",
+              "lmsHomePage":"http://lms.adlnet.gov",
+              "isScorm2004":true,
+              "activityId":"http://adlnet.gov/courses/roses/styles",
+              "groupingContextActivity":{
+                 "definition": {
+                    "name": {
+                        "en-US": "TECOM Workshop"
+                    },
+                    "description": {
+                        "en-US": "TECOM Workshop happening Nov 2016"
+                    }
+                },
+                "id": "http://adlnet.gov/event/xapiworkshop/tecom",
+                "objectType": "Activity"
+             }
+           }    
+        </adlcp:dataFromLMS>
         </item>
         <item identifier="ITEM-10DA87987356D0578B1CBBC0840F36E9" isvisible="true" identifierref="RES-19E12DFC84BA3BE391B6BACAA6257A06">
           <title>Color Symbolism</title>
+            <adlcp:dataFromLMS>
+                  {
+                  "lrs":{
+                     "endpoint":"https://lrs.adlnet.gov/xapi/",
+                     "user":"xapi-workshop",
+                     "password":"password1234"
+                  },
+                  "courseId":"http://adlnet.gov/courses/roses",
+                  "lmsHomePage":"http://lms.adlnet.gov",
+                  "isScorm2004":true,
+                  "activityId":"http://adlnet.gov/courses/roses/symbolism",
+                  "groupingContextActivity":{
+                     "definition": {
+                        "name": {
+                            "en-US": "TECOM Workshop"
+                        },
+                        "description": {
+                            "en-US": "TECOM Workshop happening Nov 2016"
+                        }
+                    },
+                    "id": "http://adlnet.gov/event/xapiworkshop/tecom",
+                    "objectType": "Activity"
+                 }
+                }    
+           </adlcp:dataFromLMS>
         </item>
         <imsss:sequencing>
           <imsss:controlMode choice="true" choiceExit="true" flow="true" forwardOnly="false" useCurrentAttemptObjectiveInfo="true" useCurrentAttemptProgressInfo="true" />
@@ -189,6 +489,31 @@
         <title>PostTest</title>
         <item identifier="ITEM-36A7E4A088E3626030E299FFE10F6CEE" isvisible="true" identifierref="RES-EE77F0999A62C65FBB22EEAF08422B25">
           <title>PostTest</title>
+            <adlcp:dataFromLMS>
+                {
+                  "lrs":{
+                     "endpoint":"https://lrs.adlnet.gov/xapi/",
+                     "user":"xapi-workshop",
+                     "password":"password1234"
+                  },
+                  "courseId":"http://adlnet.gov/courses/roses",
+                  "lmsHomePage":"http://lms.adlnet.gov",
+                  "isScorm2004":true,
+                  "activityId":"http://adlnet.gov/courses/roses/posttest",
+                  "groupingContextActivity":{
+                     "definition": {
+                        "name": {
+                            "en-US": "TECOM Workshop"
+                        },
+                        "description": {
+                            "en-US": "TECOM Workshop happening Nov 2016"
+                        }
+                    },
+                    "id": "http://adlnet.gov/event/xapiworkshop/tecom",
+                    "objectType": "Activity"
+                 }
+               }    
+            </adlcp:dataFromLMS>
         </item>
         <imsss:sequencing>
           <imsss:controlMode choice="false" choiceExit="false" flow="true" forwardOnly="true" useCurrentAttemptObjectiveInfo="true" useCurrentAttemptProgressInfo="true" />

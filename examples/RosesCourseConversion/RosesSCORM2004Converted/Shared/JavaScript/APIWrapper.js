@@ -1,6 +1,6 @@
 /****************************************************************************
 SCORM_2004_APIwrapper.js
-© 2000, 2011 Advanced Distributed Learning (ADL). Some Rights Reserved.
+ï¿½ 2000, 2011 Advanced Distributed Learning (ADL). Some Rights Reserved.
 *****************************************************************************
 
 Advanced Distributed Learning ("ADL") grants you ("Licensee") a  non-exclusive, 
@@ -149,21 +149,14 @@ function doInitialize()
    }
    else
    {
+      // todo remove
+      message("Initialize succeeded");
+       
       initialized = true;
 
       // xAPI Extension
-      var config = {
-          lrs:{
-             endpoint:"https://lrs.adlnet.gov/xapi/",
-             user:"jono",
-             password:"12345"
-          },
-          courseId:"http://adlnet.gov/courses/roses",
-          lmsHomePage:"http://cloud.scorm.com",
-          isScorm2004:true
-      };
-      xapi.setConfig(config);
-      xapi.initializeAttempt();
+       xapi.initializeAttempt();
+           
    }
 
    return result.toString();

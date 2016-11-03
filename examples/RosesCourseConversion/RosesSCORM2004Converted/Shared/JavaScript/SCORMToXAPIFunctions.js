@@ -29,22 +29,14 @@ xapi = function () {
      ** ----------------------------
      ** courseId - IRI for the course this wrapper is used in
      ** lmsHomePage - LMS home page where the course is/will be imported
+     ** isSCORM2004 - Whether the original course is SCORM 2004 (or SCORM Version 1.2)
+     ** activityId - The ID that will identify the SCO/Activity in the LRS
+     ** groupingContextActivity - Context activity for a synchronous workshop (if applicable)
      **
      ** Note: DO NOT UPDATE THE "constants" below.  These are used to indentify
      **       SCORM profile information and should not be changed
      **
      *******************************************************************************/
-    /*var config = {
-       lrs:{
-          endpoint:"https://lrs.adlnet.gov/xapi/",
-          user:"<lrs user>",
-          password:"<lrs password>"
-       },
-       courseId:"<course identifier/uri>",
-       lmsHomePage:"<lms homepage>"
-    };*/
-
-    // TODO: CHANGE THIS BACK
     var config = {
         lrs: {
             endpoint: "https://lrs.adlnet.gov/xapi/",
@@ -58,6 +50,8 @@ xapi = function () {
         groupingContextActivity: {}
     };
 
+    // xAPI SCORM Profile IRI contstants
+    // https://github.com/adlnet/xAPI-SCORM-Profile/blob/master/xapi-scorm-profile.md
     var constants = {
         activityProfileIri: "https://w3id.org/xapi/scorm/activity-profile",
         activityStateIri: "https://w3id.org/xapi/scorm/activity-state",
@@ -65,8 +59,10 @@ xapi = function () {
         attemptStateIri: "https://w3id.org/xapi/scorm/attempt-state"
     };
 
+    // used to hold the data model elements to be used based on SCORM Version
     var scormVersionConfig = {};
 
+    // used to identify if a suspend occurred
     var exitSetToSuspend = false;
 
     /*******************************************************************************
@@ -78,9 +74,7 @@ xapi = function () {
      *******************************************************************************/
     var getBaseStatement = function () {
         if (window.localStorage.learnerId == null) {
-            message("getBaseStatement - learnerId was null");
             window.localStorage.learnerId = retrieveDataValue(scormVersionConfig.learnerIdElement);
-            message("getBaseStatement - set LearnerId to: " + window.localStorage.learnerId);
         }
 
         return {
@@ -252,10 +246,7 @@ xapi = function () {
      ** This function is used to initiate an xAPI attempt
      **
      *******************************************************************************/
-    var initializeAttempt = function () {
-
-        message("In xAPI initializeAttempt");
-        
+    var initializeAttempt = function () {        
         // configure SCORM version and data elements, get launch data from lms, etc
         configureXAPIData();
         
@@ -611,10 +602,7 @@ xapi = function () {
 
         // location, preferences object, credit, lesson_mode, suspend_data, 
         // total_time, adl_data
-        message("In setAttemptState - about to get cmi_location");
         var cmi_location = retrieveDataValue(scormVersionConfig.locationElement);
-        message("In setAttemptState - got cmi_location");
-        
         
         var cmi_language = retrieveDataValue(scormVersionConfig.languageElement);
         var cmi_audio_level = retrieveDataValue(scormVersionConfig.audioLevelElement);
@@ -961,12 +949,6 @@ xapi = function () {
         config.activityId = scormLaunchDataJSON.activityId;
         config.groupingContextActivity = scormLaunchDataJSON.groupingContextActivity;
 
-        message("configureXAPIData - Set config info with value:");
-        message(scormLaunchDataJSON);
-        
-        message("configureXAPIData - Set config to:");
-        message(config);
-        
         // setup SCORM object based on configuration
         scormVersionConfig = {
             learnerIdElement: (config.isScorm2004) ? "cmi.learner_id" : "cmi.core.student_id",

@@ -8,7 +8,7 @@
   </metadata>
   <organizations default="ORG-35C6AD226A6FC7DB47BE726A01167EBF">
     <organization identifier="ORG-35C6AD226A6FC7DB47BE726A01167EBF" structure="hierarchical">
-      <title>Roses 101 (PlugFest) Version 1.0 - Original</title>
+      <title>Roses 101 SCORM 2004 - Original</title>
       <item identifier="ITEM-5E9AC1DCB6A0F867E6197B8CDB8948C5" isvisible="true">
         <title>Module1</title>
         <item identifier="ITEM-55AAA6A3545DE7BE0DA3815BE1A68D4F" isvisible="true" identifierref="RES-9EDAE324221F5841BB39FEF6DFDE2BA4">
@@ -66,7 +66,7 @@
           </imsss:sequencing>
         </item>
         <imsss:sequencing>
-          <imsss:controlMode choice="true" choiceExit="true" flow="true" forwardOnly="false" useCurrentAttemptObjectiveInfo="true" useCurrentAttemptProgressInfo="true" />
+        <imsss:controlMode choice="true" choiceExit="true" flow="true" forwardOnly="false" useCurrentAttemptObjectiveInfo="true" useCurrentAttemptProgressInfo="true" />
           
 	<imsss:rollupRules  objectiveMeasureWeight="0.0000">
 		<imsss:rollupRule childActivitySet = "all">

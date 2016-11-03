@@ -5,67 +5,163 @@
 <script language="JavaScript" src="../Shared/JavaScript/SCOFunctions.js"></script>
 <script language="JavaScript">
 
+var scoIsComplete = false;
+
 function submitScore() 
 {
+  scoIsComplete = true;
+
+  // setup the basic interaction information
+  storeDataValue("cmi.interactions.0.id", "urn:adl_roses_q1");
+  storeDataValue("cmi.interactions.0.type", "choice");
+  storeDataValue("cmi.interactions.0.description", "What is the correct genus for roses?");
+  storeDataValue("cmi.interactions.1.id", "urn:adl_roses_q2");
+  storeDataValue("cmi.interactions.1.type", "choice");
+  storeDataValue("cmi.interactions.1.description", "Which statement is true about the purpose of pruning?");
+  storeDataValue("cmi.interactions.2.id", "urn:adl_roses_q3");
+  storeDataValue("cmi.interactions.2.type", "choice");
+  storeDataValue("cmi.interactions.2.description", "Which is true about hybrid tea roses?");
+  storeDataValue("cmi.interactions.3.id", "urn:adl_roses_q4");
+  storeDataValue("cmi.interactions.3.type", "choice");
+  storeDataValue("cmi.interactions.3.description", "Which color is correctly matched with its rose color symbolism?");
+
+  // get the learners responses
+  var response = "";
+
+  // q1
+  for(var i=0, length=document.examForm.Q1.length; i < length; i++) 
+  {
+      if (document.examForm.Q1[i].checked) 
+      {
+        response = document.examForm.Q1[i].value;
+        break;
+      }
+  }
+  storeDataValue("cmi.interactions.0.learner_response", response);
+  response = "";
+
+  // q2
+  for(var i=0, length=document.examForm.Q2.length; i < length; i++) 
+  {
+      if (document.examForm.Q2[i].checked) 
+      {
+        response = document.examForm.Q2[i].value;
+        break;
+      }
+  }
+  storeDataValue("cmi.interactions.1.learner_response", response);
+  response = "";
+
+  // q3
+  for(var i=0, length=document.examForm.Q3.length; i < length; i++) 
+  {
+      if (document.examForm.Q3[i].checked) 
+      {
+        response = document.examForm.Q3[i].value;
+        break;
+      }
+  }
+  storeDataValue("cmi.interactions.2.learner_response", response);
+  response = "";
+
+  // q4
+  for(var i=0, length=document.examForm.Q4.length; i < length; i++) 
+  {
+      if (document.examForm.Q4[i].checked) 
+      {
+        response = document.examForm.Q4[i].value;
+        break;
+      }
+  }
+  storeDataValue("cmi.interactions.3.learner_response", response);
+
 	document.examForm.submitButton.disabled = true;
 	var score = 0;
 	
+  // determine score and set 'result'
   if(document.examForm.Q1[0].checked)
   {
     score = score + 25; 
+    storeDataValue("cmi.interactions.0.result", "correct");
   }  
+  else
+  {
+    storeDataValue("cmi.interactions.0.result", "incorrect");
+  }
+
   if(document.examForm.Q2[2].checked)
   {
     score = score + 25; 
+    storeDataValue("cmi.interactions.1.result", "correct");
   }  
+  else
+  {
+    storeDataValue("cmi.interactions.1.result", "incorrect");
+  }
+
   if(document.examForm.Q3[2].checked)
   {
     score = score + 25; 
-  }  
+    storeDataValue("cmi.interactions.2.result", "correct");
+  }
+  else
+  {
+    storeDataValue("cmi.interactions.2.result", "incorrect");
+  } 
+
   if(document.examForm.Q4[0].checked)
   {
     score = score + 25; 
+    storeDataValue("cmi.interactions.3.result", "correct");
   }
-    
+  else
+  {
+    storeDataValue("cmi.interactions.3.result", "incorrect");
+  } 
+
 	var res = document.getElementById("results");
 
 	score = score / 100;
-	credit = false;
+	storeDataValue('cmi.score.scaled', score);
 	
-  if (document.examForm.cred[0].checked)
+  if (score > 0.70){
+		storeDataValue('cmi.success_status', 'passed');	
+	}
+	else 
   {
-		credit = true;
-		storeDataValue('cmi.score.scaled', score);
-		
-    if (score > .70){
-			storeDataValue('cmi.success_status', 'passed');	
-		}
-		else 
-    {
-			storeDataValue('cmi.success_status', 'failed');
-		}
-	}	
-
+		storeDataValue('cmi.success_status', 'failed');
+	}
+	
   var message = "Your score is: " + (score * 100);
-  
 
   res.innerHTML = message;
 
 }  
+
+function unloadSco()
+{
+  if(scoIsComplete)
+  {
+    storeDataValue("cmi.completion_status", "completed"); 
+  }
+  else
+  {
+    storeDataValue("cmi.exit", "suspend");
+  }
+  
+  terminateCommunication(); 
+}
+
 </script>
+<link rel="stylesheet" href="../Shared/Styles/foundation.min.css"> 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Post Test</title>
 
 </head>
-<body onload="javascript:initializeCommunication(); storeDataValue('cmi.completion_status', 'incomplete');" onunload="javascript:storeDataValue('cmi.completion_status', 'completed'); terminateCommunication(); " >
+<body onload="javascript:initializeCommunication(); storeDataValue('cmi.completion_status', 'incomplete');" onunload="javascript:unloadSco();" >
 <div id="targetDiv">
 
-<form name="examForm" action="">
-<p><strong>Would you like to take this course for credit?</strong></p>
-    <input type="radio" value="yes" name="cred" /> Yes 
-    <input type="radio" value="no" name="cred" /> No
-  <p></p>
-  
+<form name="examForm" action="">  
 <p>1. <strong>What is the correct genus for roses?</strong></p>
 <ul>
   <li>

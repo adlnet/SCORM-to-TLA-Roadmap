@@ -3,20 +3,51 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Resources</title>
+<link rel="stylesheet" href="./Styles/foundation.min.css"> 
+
+<script>
+function loadXMLDoc(filename)
+{
+if (window.ActiveXObject)
+  {
+  xhttp = new ActiveXObject("Msxml2.XMLHTTP");
+  }
+else 
+  {
+  xhttp = new XMLHttpRequest();
+  }
+xhttp.open("GET", filename, false);
+try {xhttp.responseType = "msxml-document"} catch(err) {} // Helping IE11
+xhttp.send("");
+return xhttp.responseXML;
+}
+
+function showRes()
+{
+xml = loadXMLDoc("resources.xml");
+xsl = loadXMLDoc("resources.xslt");
+// code for IE
+if (window.ActiveXObject || xhttp.responseType == "msxml-document")
+  {
+  ex = xml.transformNode(xsl);
+  document.getElementById("resources").innerHTML = ex;
+  }
+// code for Chrome, Firefox, Opera, etc.
+else if (document.implementation && document.implementation.createDocument)
+  {
+  xsltProcessor = new XSLTProcessor();
+  xsltProcessor.importStylesheet(xsl);
+  resultDocument = xsltProcessor.transformToFragment(xml, document);
+  document.getElementById("resources").appendChild(resultDocument);
+  }
+}
+</script>
+
 </head>
 
 <body onload="showRes()">
-<script language="javascript">
-function showRes() {
-			var xml1 = new ActiveXObject("Microsoft.XMLDOM");
-			xml1.async = false;
-		  	xml1.load("resources.xml");
-		  	var xsl1 = new ActiveXObject("Microsoft.XMLDOM");
-		  	xsl1.async = false;
-		  	xsl1.load("resources.xslt");
-		  	document.write("\n"+xml1.transformNode(xsl1));
-			
-	}
-</script>
+
+<div id="resources" />
+
 </body>
 </html>

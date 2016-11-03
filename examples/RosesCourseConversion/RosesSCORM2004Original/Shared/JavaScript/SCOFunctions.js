@@ -3,7 +3,7 @@
 **
 ** Course functions for the Advanced Distributed Learning
 ** Sequencing Essentials Content Example (SECE).
-** Sharable Content Object Reference Model (SCORM®) 2004 Sequencing.
+** Sharable Content Object Reference Model (SCORMÂ®) 2004 Sequencing.
 **
 *******************************************************************************/
 

@@ -16,6 +16,8 @@ to address it.
 The following courses are included as examples
 
 #### Roses SCORM 1.2 Original
+NOTE - THESE FILES REQUIRE UPDATES DUE TO CHANGES IN THE WRAPPER FILES.  PLEASE SEE THE SCORM 2004 VERSIONS UNTIL THIS IS ADDRESSED
+
 The project contains the SCORM Version 1.2 Roses Course.  
 
 This course version tracks a subset of SCORM data model elements using the SCORM Version 1.2 Run-Time Environment.

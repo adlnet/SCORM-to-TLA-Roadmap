@@ -14,7 +14,7 @@
         <item identifier="ITEM-55AAA6A3545DE7BE0DA3815BE1A68D4F" isvisible="true" identifierref="RES-9EDAE324221F5841BB39FEF6DFDE2BA4">
           <title>Introduction to Roses</title>
             <adlcp:dataFromLMS>
-            {
+				{
                   "lrs":{
                      "endpoint":"https://lrs.adlnet.gov/xapi/",
                      "user":"xapi-workshop",
@@ -35,7 +35,7 @@
                     },
                     "id": "http://adlnet.gov/event/xapiworkshop/tecom",
                     "objectType": "Activity"
-                 }
+					}
                }    
             </adlcp:dataFromLMS>
         </item>
@@ -299,7 +299,7 @@
                       "courseId":"http://adlnet.gov/courses/roses",
                       "lmsHomePage":"http://lms.adlnet.gov",
                       "isScorm2004":true,
-                      "activityId":"http://adlnet.gov/courses/roses/headheading",
+                      "activityId":"http://adlnet.gov/courses/roses/deadheading",
                       "groupingContextActivity":{
                          "definition": {
                             "name": {

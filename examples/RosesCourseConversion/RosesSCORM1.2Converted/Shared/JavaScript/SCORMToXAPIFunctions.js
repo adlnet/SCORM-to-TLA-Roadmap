@@ -58,10 +58,10 @@ xapi = function(){
    };
 
    var constants = {
-      activityProfileIri:"http://adlnet.gov/xapi/profile/scorm/activity-profile",
-      activityStateIri:"http://adlnet.gov/xapi/profile/scorm/activity-state",
-      actorProfileIri:"http://adlnet.gov/xapi/profile/scorm/actor-profile",
-      attemptStateIri:"http://adlnet.gov/xapi/profile/scorm/attempt-state"
+      activityProfileIri:"https://w3id.org/xapi/scorm/activity-profile",
+      activityStateIri:"https://w3id.org/xapi/scorm/activity-state",
+      actorProfileIri:"https://w3id.org/xapi/scorm/actor-profile",
+      attemptStateIri:"https://w3id.org/xapi/scorm/attempt-state"
    };
 
    var scormVersionConfig = {};
@@ -118,7 +118,10 @@ xapi = function(){
                ],
                category:[
                   {
-                     id:"http://adlnet.gov/xapi/profile/scorm"
+                     id:"https://w3id.org/xapi/scorm",
+                     definition: {
+                        type: "http://adlnet.gov/expapi/activities/profile"
+                     }
                   }
                ]
             }
@@ -189,7 +192,10 @@ xapi = function(){
                   ],
                   category:[
                      {
-                        id:"http://adlnet.gov/xapi/profile/scorm"
+                        id:"https://w3id.org/xapi/scorm",
+                        definition: {
+                           type: "http://adlnet.gov/expapi/activities/profile"
+                        }
                      }
                   ]
                }

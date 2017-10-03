@@ -112,7 +112,10 @@ xapi = function () {
                ],
                     category: [
                         {
-                            id: "https://w3id.org/xapi/scorm"
+                            id: "https://w3id.org/xapi/scorm",
+                            definition: {
+                               type: "http://adlnet.gov/expapi/activities/profile"
+                            }
                   }
                ]
                 }
@@ -180,7 +183,10 @@ xapi = function () {
                   ],
                     category: [
                         {
-                            id: "https://w3id.org/xapi/scorm"
+                            id: "https://w3id.org/xapi/scorm",
+                            definition: {
+                               type: "http://adlnet.gov/expapi/activities/profile"
+                            }
                      }
                   ]
                 }
